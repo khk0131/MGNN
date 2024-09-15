@@ -124,7 +124,7 @@ class Trainer:
             config['dataloader_num_workers'] = 0
         
         if 'batch_size' not in config:
-            config['batch_size'] = None
+            config['batch_size'] = 1
         
         if 'epoch' not in config:
             config['epoch'] = 100
@@ -201,8 +201,8 @@ class Trainer:
             )
     
     def frames_to_concated_tensor(self, input_data: List[Dict[str, torch.Tensor]]):
-        num_datas = len(input_data)
-        assert num_datas > 0
+        num_data = len(input_data)
+        assert num_data > 0
         true_total_energy_list = []
         true_force_list = []
         for data_idx in range(len(input_data)):
