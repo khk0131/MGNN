@@ -20,7 +20,7 @@ import numpy as np
 @compile_mode('script')
 class Nequip(torch.nn.Module, GraphModuleMixin):
     """
-        Nequip (https://www.nature.com/articles/s41467-022-29939-5)
+        Based on Nequip (https://www.nature.com/articles/s41467-022-29939-5)
         E(3)-同変グラフニューラルネットワークを用いた機械学習ポテンシャルを構築Allegroと比較して精度が良い場合もあるが、スケーラビリティに劣る
         
         Parameters
