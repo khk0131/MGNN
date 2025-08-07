@@ -3,3 +3,4 @@ Hello! MGNN is used for neural network potential based on equivariant graph neur
 
 ## Installation
 mgnn requires e3nn puckage(https://github.com/e3nn/e3nn)<br>
+`git@github.com:khk0131/MGNN.git`
