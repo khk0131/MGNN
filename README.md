@@ -17,7 +17,6 @@ export PATH="${PATH}:$HOME/mgnn/mgnn/scripts"
 ## Training
 Firts of all, config.yaml file should be creadted and follwing information should be included
 
-# Full configs
 ```bash
 # dataset and dataloader
 train_dataset_paths: [
