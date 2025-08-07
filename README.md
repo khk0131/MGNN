@@ -55,8 +55,8 @@ save_model_step_size: 1000 # save models at each this step
 state_dict_dir: state_dicts # state_dict is saved in the directory
 save_frozen_model_dir: frozen_models # frozen_model is saved in the directory
 
-# allegro
-model: Allegro
+# mgnn
+model: Nequip
 num_atom_types: 5
 cut_off: 3.4
 lmax: 1
