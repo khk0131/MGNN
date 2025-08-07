@@ -8,4 +8,10 @@ git clone git@github.com:khk0131/MGNN.git
 ```
 Then, you can install mgnn in your environment
 
+## Set Path
+```bash
+# set the following paths in .bashrc
+export PYTHONPATH="${PYTHONPATH}:$HOME/mgnn"
+export PATH="${PATH}:$HOME/mgnn/mgnn/scripts"
+```
 ## Training
