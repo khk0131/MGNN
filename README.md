@@ -18,7 +18,7 @@ export PATH="${PATH}:$HOME/mgnn/mgnn/scripts"
 Firts of all, config.yaml file should be creadted and follwing information should be included
 
 ```bash
-# dataset and dataloader
+# list with dataset paths
 train_dataset_paths: [
 /nfshome18/khosono/vasp/train_dataset/H2O_density1.0, # AIMD dataset with pickle package 
 ]
