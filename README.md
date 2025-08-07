@@ -21,46 +21,40 @@ Firts of all, config.yaml file should be creadted and follwing information shoul
 ```bash
 # dataset and dataloader
 train_dataset_paths: [
-/nfshome15/rkudo/vasp/train_dataset/H2O_density1.0,
+/nfshome18/khosono/vasp/train_dataset/H2O_density1.0, # AIMD dataset with pickle package 
 ]
 
-seed: 0 # 初期重みを決定するシード
-shuffle_dataset: True # データセットの順番をシャッフルするかどうか
+shuffle_dataset: True # Shuffle dataset
 dataloader_num_workers: 0
 
 # training
 device: cuda
 epoch: 100
-frame_skip_num: 5  # １本のMDをいくつおきに訓練するか
-loss_pot_ratio_step_size: 200000 # このステップごとに、loss_pot_ratioをloss_pot_ratio_gamma倍にする
-loss_pot_ratio_initial: 1.0 # 初期のloss_pot_ratioの値
+frame_skip_num: 5  # How many steps will be skipped for learning AIMD data
+loss_pot_ratio_step_size: 200000 # loss_pot_ratio is multiplied with loss_pot_ratio_gamma at each this step
+loss_pot_ratio_initial: 1.0 # initial loss_pot_ratio value
 loss_pot_ratio_gamma: 1.0
 
 loss_force_ratio_step_size: 200000
 loss_force_ratio_initial: 1.0
 loss_force_ratio_gamma: 1.0
 
-flag_calc_stress: False # Trueならばvirialを学習させる
-loss_stress_ratio_step_size: 200000 # このステップごとに、loss_virial_ratioをloss_virial_ratio_gamma倍にする
-loss_stress_ratio_initial: 1.0 # 初期のloss_virial_ratioの値
-loss_stress_ratio_gamma: 1.0
-
-auto_resume: True # 自動で途中から学習を始めるかどうか. はじめから訓練をする場合もTrueでok
+auto_resume: True # Training resume in the middle or not
 
 # optimizer
-lr: 0.001 # 学習率
-adam_betas: [0.9, 0.999] # Adamのハイパーパラメーター
-adam_weight_decay: 0.0 # Adamのハイパーパラメーター
+lr: 0.001 # learning rate
+adam_betas: [0.9, 0.999] # Hypermarameter for Adam
+adam_weight_decay: 0.0 # Hyperparameter for Adam
 
 # scheduler
-steplr_step_size: 200000 # このステップごとに、lrをsteplr_gamma倍にする
+steplr_step_size: 200000 # lr is mutiplied with steplr_gamma at each this step
 steplr_gamma: 0.1
 min_lr: 1e-06
 
 # output
-save_model_step_size: 1000 # このステップごとに、モデルを保存する
-state_dict_dir: state_dicts # state_dictの保存先
-save_frozen_model_dir: frozen_models # frozen_modelsの保存先
+save_model_step_size: 1000 # save models at each this step
+state_dict_dir: state_dicts # state_dict is saved in the directory
+save_frozen_model_dir: frozen_models # frozen_model is saved in the directory
 
 # allegro
 # Allegroのconfig
@@ -76,10 +70,9 @@ polynominal_p: 8.0
 edge_sh_normalization: component
 edge_sh_normalize: True
 env_embed_multiplicity: 32
-```
 latents_to_edge_energy_hidden_dims: [128]
 two_body_mlp_hidden_dims: [128]
 env_embed_mlp_hidden_dims: []
 latent_mlp_hidden_dims: [128]
 activation_function: silu
-avg_atom_energy: -5.0 # check_dataset.pyでavg_atom_energyがわかるので、それを指定する
+```
